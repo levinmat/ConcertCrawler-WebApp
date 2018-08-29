@@ -158,7 +158,7 @@ function resultsView() {
 
 // When help icon is clicked, shows help text
 function showHelp() {
-	$("#info").html(`Search for an artist that has live shows <i>(albums with a full date in the title)</i> available on Spotify, e.g. <a href="index.html?q=grateful-dead">Grateful Dead</a> or <a href="index.html?q=the-allman-brothers-band">The Allman Brothers Band</a>, to see their live shows in chronological order.`);
+	$("#info").html(`Search for an artist that has live shows <i>(albums with a full date in the title)</i> available on Spotify, e.g. <a href="index.html?q=grateful-dead">Grateful Dead</a> or <a href="index.html?q=the-allman-brothers-band">The Allman Brothers Band</a>, to see their live shows in chronological order. Looks best on Chrome or Firefox, and designed to work on mobile and tablets as well.`);
 }
 
 

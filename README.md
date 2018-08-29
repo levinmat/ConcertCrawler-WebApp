@@ -1,6 +1,6 @@
 # ConcertCrawler - Web App
 
-Browse an artists live shows available on Spotify in chronological order.
+Browse an artist's live shows available on Spotify in chronological order.
 
 ### [concert-crawler.herokuapp.com](https://concert-crawler.herokuapp.com/)
 
