@@ -1,5 +1,0 @@
-- Mobile - click on search bar to highlight whole field
-
-
-- Push to Heroku/git, populate cache, share
-
