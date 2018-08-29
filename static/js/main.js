@@ -192,10 +192,10 @@ $(document).ready(function() {
 	});
 
 	$("#searchField").focus(function() {
-		window.scrollTo(0, 0);
 		// If on mobile select all text automatically
-		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			$(this).select(); 
+			window.scrollTo(0, 0);
 		}
 	});
 

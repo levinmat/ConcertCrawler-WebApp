@@ -1,4 +1,6 @@
+- Mobile - click on search bar to highlight whole field
+- Mobile - click on search bar when in header moves window to right :/
+- Mobile - Refresh loop when search (entered text not click 'GD' link) then go back to home
 
-- Back button listener
 - Push to Heroku/git, populate cache, share
 
