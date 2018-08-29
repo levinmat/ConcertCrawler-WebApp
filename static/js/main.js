@@ -220,8 +220,8 @@ $(document).ready(function() {
 		console.log("popped state");
     	// special case, goes back to initial screen
     	if (e.currentTarget.location.href.indexOf("?q=") === -1) {
-    		if (window.location.href != "index.html") {
-    			window.location.href = "index.html";
+    		if (window.location.href !== "https://concert-crawler.herokuapp.com/") {
+    			window.location.href = "https://concert-crawler.herokuapp.com/";
     		}
     	} // ignore hash changes due to "Jump to Year"
     	else  {
