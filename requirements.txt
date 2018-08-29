@@ -1,0 +1,5 @@
+flask
+spotipy
+gunicorn
+Flask-Cache
+flask-compress

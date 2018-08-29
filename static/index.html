@@ -1,0 +1,64 @@
+<html>
+<head>
+	<title>ConcertCrawler</title>
+	<link rel='icon' href="static/img/icon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<!-- Custom Stylesheet -->
+	<link rel='stylesheet' href='/static/css/styles.css'></link>
+
+</head>
+
+<body>
+
+	<div id="header">
+		<div  id="logo">
+			<a href="index.html"><h2>ConcertCrawler</h2></a>
+		</div>
+	</div>
+
+
+	<div id="main" class="scrollable">
+
+		<div id="search">
+			<div id="searchBar">
+				<input type="search" id="searchField" placeholder="Enter Artist..." />
+				<a id="searchIcon" href="" onclick=executeSearch()><i class="fas fa-search"></i></a>
+			</div>
+		</div>
+
+		<div id="info">
+			<p>Find an artist's live shows available on Spotify in chronological order. Enter an artist that has live albums (e.g. '<a href="index.html?q=grateful-dead">Grateful Dead</a>') to browse their available live shows in order.</p>
+		</div>
+	</div>
+
+	<div id="sidebar" class="hidden">
+		<div id="menu" class="scrollable">
+		</div>
+	</div>
+
+
+	<div id="footer" class="hidden">
+		Created by <a href='https://www.matt-levin.com'>Matt Levin</a>, powered by the <a href='https://developer.spotify.com/documentation/web-api/'>Spotify Web API</a>. View source on <a href='https://github.com/levinmat/ConcertCrawler-WebApp'>GitHub</a>.
+	</div>
+
+
+	<img id='loading-gif' src='static/img/load.gif' width=28px>
+
+
+	<!-- Scripts -->
+	<!-- Mustache JS for templates -->
+	<script src='/static/js/mustache-min.js'></script>
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Custom JS for project -->
+	<script src="/static/js/main.js"></script>
+
+
+
+</body>
+</html>

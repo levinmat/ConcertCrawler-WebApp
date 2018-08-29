@@ -1,0 +1,396 @@
+/* Define color scheme */
+:root {
+	--main-bg-color: #84C6E6;
+
+	--box-bg-color: #74B9DB;
+	--box-hover-color: #6EB2D2;
+
+	--main-txt-color: #13477D; 
+	--hover-txt-color: #0C3055;
+
+	--header-bg-color: #69ABD0;
+}
+
+html {
+	background-color: var(--main-bg-color);
+	color: var(--main-txt-color);
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+/* Body acts as grid container */
+body {
+	margin: 0;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: 50px auto 20px;
+	grid-template-columns: 15% auto 220px;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Main 4 grid areas */
+#header {
+	background-color: var(--header-bg-color);
+	/*border-bottom: .03em solid var(--box-border-color);*/
+	grid-row: 1;
+	grid-column: 1 / span 3;
+	display: grid;
+	grid-template-columns: 20% auto 20%;
+}
+
+#main {
+	grid-row: 2;
+	grid-column: 1 / span 3;
+	padding: 1em;
+	text-align: left;
+}
+
+#sidebar {
+	grid-row: 2;
+	grid-column: 3;
+	height: 100%;
+	width: 100%;
+}
+
+#footer {
+	background-color: var(--header-bg-color);
+	/*border-top: .03em solid var(--box-border-color);*/
+	grid-row: 3;
+	grid-column: 1 / span 3;
+	line-height: 20px;
+	/*overflow-x: scroll;*/
+}
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Grid subareas */
+#logo {
+	grid-column: 1;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+}
+
+#search {
+	grid-column: 3;
+}
+
+#menu {
+	background-color: var(--box-bg-color);
+	/*border: .15em solid var(--box-border-color);*/
+	border-radius: 2em;
+	padding: 1em;
+	height: 90%;
+	margin: 1em;
+}
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* CSS for each album */
+.album {
+	display: flex;
+	background-color: var(--box-bg-color);
+	padding: 0.75em;
+	margin-bottom: 1em;
+	border: .15em solid var(--box-border-color);
+	border-radius: 2em;
+}
+
+.album:hover {
+	background-color: var(--box-hover-color);
+}
+
+.albumImage img {
+	width: 10em;
+	height: 10em;
+	margin: 0.5em;
+}
+
+.albumName {
+	font-size: 140%;
+	display: flex;
+	align-items: center;
+	margin: 0.5em;
+	font-weight: normal !important;
+}
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Search Bar */
+#search {
+	margin-top: 10%;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+#searchBar {
+	margin: auto;
+	width: 250px;
+	height: 50px;
+	position: relative;
+}
+
+#searchField {
+	width: 250px;
+	height: 60px;
+	background-color: var(--box-bg-color);
+	color: var(--main-txt-color);
+	border: none;
+	border-radius: 25px;
+	font-size: 20px;
+	text-transform: capitalize;
+	padding-left: 15px;
+	padding-right: 50px;
+}
+
+#searchField:focus {
+	outline-width: 0;
+}
+
+#searchBar:hover > #searchField {
+	background-color: #69AED4;
+
+}
+
+
+#searchIcon {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	font-size: 20px;
+}
+
+
+.searchInHeader {
+	margin: auto;
+	position: absolute;
+	top: -22px;
+	right: 30px;
+}
+
+.searchInHeader #searchField {
+	background-color: #69AED4;
+	height: 40px;
+	width: 220px;
+	margin-top: 5px;
+	padding-right: 40px;
+	border: 0.05em solid var(--main-txt-color);
+
+}
+
+.searchInHeader #searchIcon {
+	right: 30px;
+	bottom: 15px;
+	font-size: 20px;
+}
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Other CSS */
+a, a:active, a:focus {
+	text-decoration: none;
+	color: var(--main-txt-color);
+	font-weight: bold;
+}
+a:hover {
+	color: var(--hover-txt-color);
+	/*font-weight: normal;*/
+}
+
+#info {
+	margin-top: 20px;
+	margin-left: 15%;
+	margin-right: 15%;
+	text-align: center;
+	font-size: 130%;
+}
+
+#loading-gif {
+	position: fixed;
+	z-index: 999;
+	height: 10em;
+	width: 10em;
+	overflow: show;
+	margin: auto;
+	top: -10em;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#logo h2:hover {
+	font-weight: normal;
+}
+
+.year {
+	border-top: 0.12em solid rgba(19,71,125,0.15);
+	width: 100%;
+	display: block;
+	font-size: 135%;
+	padding-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+.year strong {
+	font-weight: 180%;
+}
+
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Mobile compatibility */
+@media only screen and (max-width: 680px) {
+	#sidebar {
+		display: none !important;
+	}
+
+	#main {
+		grid-column: 1 / span 3 !important;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.searchInHeader {
+		position: absolute;
+		right: -25px;
+	}
+	.searchInHeader #searchField {
+		/*position: absolute;*/
+		width: 150px;
+		padding-right: 40px;
+		/*right: 0px;*/
+	}
+
+	.searchInHeader #searchBar {
+		/*right: 10px;*/
+		width: 150px;
+	}
+
+	.searchInHeader #searchIcon {
+		right: 10px;
+	}
+
+	#info {
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	body {
+		grid-template-rows: 50px auto 35px;
+	}
+
+	#footer {
+		line-height: 15px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	#logo {
+		font-size: 12px;
+		padding-top: 9px;
+	}
+
+	#main {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	.album {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.albumName {
+		text-align: center; 
+		font-size: 110%;
+	}
+
+	.albumImage img {
+		width: 15em;
+		height: 15em;
+	}
+
+	#info {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	
+}
+
+
+
+
+
+/***********************************************************************/
+/***********************************************************************/
+/***********************************************************************/
+/* Util */
+.scrollable {
+	overflow-y: auto;
+	max-height: 100%;
+}
+
+.hidden {
+	display: none !important;
+}
+
+
+/* 
+	Hides the 'x' on the search bar, thanks to Maxime Rouillere
+  	Source: https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/
+  	*/
+  	/* clears the 'X' from Internet Explorer */
+  	input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+  	input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+  	/* clears the 'X' from Chrome */
+  	input[type="search"]::-webkit-search-decoration,
+  	input[type="search"]::-webkit-search-cancel-button,
+  	input[type="search"]::-webkit-search-results-button,
+  	input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+
+  	/* Placeholder font color:  https://www.w3schools.com/howto/howto_css_placeholder.asp */
+  	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  		color: rgba(19,71,125,0.5);
+  		opacity: 1; /* Firefox */
+  	}
+
+  	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  		color: rgba(19,71,125,0.5);
+  	}
+
+  	::-ms-input-placeholder { /* Microsoft Edge */
+  		color: rgba(19,71,125,0.5);
+  	}
+
