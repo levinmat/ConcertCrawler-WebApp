@@ -207,12 +207,13 @@ $(document).ready(function() {
 		console.log("mobile");
 		$('#searchField').focus( function(e) {
 			console.log("focused!");
+			setTimeout({
 			try {
 				$("#searchField").setSelectionRange(0,9999); // Safari
 			}
 			catch (e) {
 				$("#searchField").select(); // Chrome
-			}
+			}}, 10);
 		});
 	}
 
