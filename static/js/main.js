@@ -165,16 +165,16 @@ function loadFromURL() {
 		else {
 			try {
 				// For forward/back between different years - doesn't affect new page loads
-    			year = url.slice(-5).substring(1);
-    			if (! isNaN(year)) {
-    				scrollToYear(year);
-    			}
+				year = url.slice(-5).substring(1);
+				if (! isNaN(year)) {
+					scrollToYear(year);
+				}
 			}
 			catch (er) { console.log('avoided crashing on new page load w/ year hash.'); }    		
-    	}
+		}
 
-    }
-    else {
+	}
+	else {
 		$('#loading-gif').addClass("hidden"); // Hide loading icon
 	}
 }
@@ -188,6 +188,14 @@ $(document).ready(function() {
 	$("#searchField").keyup(function(event) {
 		if (event.keyCode === 13) {
 			$("#searchIcon").click();
+		}
+	});
+
+	$("#searchField").focus(function() {
+		window.scrollTo(0, 0);
+		// If on mobile select all text automatically
+		if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+			$(this).select(); 
 		}
 	});
 
