@@ -192,9 +192,11 @@ $(document).ready(function() {
 	});
 
 	$("#searchField").focus(function() {
+		// console.log("focus");
 		// If on mobile select all text automatically
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			// window.scrollTo(0, 0);
+			console.log("mobile detected");
 			$(this).select();
 		}
 	});
