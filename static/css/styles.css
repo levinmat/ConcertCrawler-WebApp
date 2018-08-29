@@ -11,6 +11,7 @@
 	--header-bg-color: #69ABD0;
 }
 
+
 html {
 	background-color: var(--main-bg-color);
 	color: var(--main-txt-color);
@@ -368,33 +369,30 @@ a:hover {
 }
 
 
-/* 
-	Hides the 'x' on the search bar, thanks to Maxime Rouillere
-  	Source: https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search/
-  	*/
-  	/* clears the 'X' from Internet Explorer */
-  	input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
-  	input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
-
-  	/* clears the 'X' from Chrome */
-  	input[type="search"]::-webkit-search-decoration,
-  	input[type="search"]::-webkit-search-cancel-button,
-  	input[type="search"]::-webkit-search-results-button,
-  	input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 
+/*  Hides the 'x' on the search bar, thanks to Maxime Rouillere
+  	Source: https://blog.maximerouiller.com/post/remove-the-x-from-internet-explorer-and-chrome-input-type-search */
+/* Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+/* Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
 
-  	/* Placeholder font color:  https://www.w3schools.com/howto/howto_css_placeholder.asp */
-  	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  		color: rgba(19,71,125,0.5);
-  		opacity: 1; /* Firefox */
-  	}
 
-  	:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  		color: rgba(19,71,125,0.5);
-  	}
 
-  	::-ms-input-placeholder { /* Microsoft Edge */
-  		color: rgba(19,71,125,0.5);
-  	}
+/* Placeholder font color, Source: https://www.w3schools.com/howto/howto_css_placeholder.asp */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: rgba(19,71,125,0.5);
+	opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: rgba(19,71,125,0.5);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+	color: rgba(19,71,125,0.5);
+}
 

@@ -57,11 +57,15 @@ def search(query):
 	# Return with JSON format and 200 status
 	return Response(jsonResponse, status=200, mimetype='application/json')
 
-# Empty query response
+
+
+# Special case for when the query is empty
 @app.route('/search/')
 def emptyQuery():
 	js = json_dump({'success':False, 'error':'empty-query'})
 	return Response(js, status=200, mimetype='application/json')
+
+
 
 # Set up connection with Spotify API
 # Called with AJAX on page load since auth token expires
