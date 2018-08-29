@@ -204,7 +204,9 @@ $(document).ready(function() {
 
 	// On mobile, select all text in search field when clicked
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$( "#searchField" ).focus(function() {
+		console.log("mobile");
+		$('#searchField').focus( function(e) {
+			console.log("focused!");
 			try {
 				$("#searchField").setSelectionRange(0,9999); // Safari
 			}
