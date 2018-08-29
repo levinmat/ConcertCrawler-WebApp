@@ -220,7 +220,9 @@ $(document).ready(function() {
 		console.log("popped state");
     	// special case, goes back to initial screen
     	if (e.currentTarget.location.href.indexOf("?q=") === -1) {
-    		window.location.href = ""
+    		if (window.location.href != "") {
+    			window.location.href = "";
+    		}
     	} // ignore hash changes due to "Jump to Year"
     	else  {
     		console.log("reload w/ url query!")
