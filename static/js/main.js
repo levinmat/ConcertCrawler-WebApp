@@ -196,8 +196,7 @@ $(document).ready(function() {
 		// If on mobile select all text automatically
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 			// window.scrollTo(0, 0);
-			console.log("mobile detected");
-			$(this).select();
+			$("#searchField").select();
 		}
 	});
 
@@ -220,9 +219,8 @@ $(document).ready(function() {
 		console.log("popped state");
     	// special case, goes back to initial screen
     	if (e.currentTarget.location.href.indexOf("?q=") === -1) {
-    		if (window.location.href !== "https://concert-crawler.herokuapp.com/") {
-    			window.location.href = "https://concert-crawler.herokuapp.com/";
-    		}
+    		showHelp();
+    		errorView();
     	} // ignore hash changes due to "Jump to Year"
     	else  {
     		console.log("reload w/ url query!")
