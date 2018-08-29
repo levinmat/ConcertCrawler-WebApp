@@ -355,8 +355,9 @@ a:hover {
 /***********************************************************************/
 /* Util */
 .scrollable {
-	overflow-y: auto;
+	overflow-y: scroll;
 	max-height: 100%;
+	-webkit-overflow-scrolling: touch;
 }
 
 .hidden {
