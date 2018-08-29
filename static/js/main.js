@@ -217,9 +217,10 @@ $(document).ready(function() {
 
 	// Listen for back/forward button to go to prev/last query
 	$(window).on('popstate', function (e) {
+		console.log("popped state");
     	// special case, goes back to initial screen
     	if (e.currentTarget.location.href.indexOf("?q=") === -1) {
-    		window.location.href = "index.html"
+    		window.location.href = ""
     	} // ignore hash changes due to "Jump to Year"
     	else  {
     		console.log("reload w/ url query!")
