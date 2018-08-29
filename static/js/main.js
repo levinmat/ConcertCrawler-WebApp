@@ -205,8 +205,8 @@ $(document).ready(function() {
 	// On mobile, select all text in search field when clicked
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		alert("mobile");
-		$('#searchField').focus( function(e) {
-			alert("focused!");
+		$('#searchField').onclick( function(e) {
+			alert("clicked!");
 			setTimeout(function() {
 				try {
 					$("#searchField").setSelectionRange(0,9999); // Safari
