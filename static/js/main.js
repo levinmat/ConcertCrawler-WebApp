@@ -207,7 +207,7 @@ $(document).ready(function() {
 		console.log("mobile");
 		$("#searchField").on('click', function () {
 			console.log("select");
-			setTimeout(function() { $("#searchField").select(); }, 40)
+			setTimeout(function() { $("#searchField").select(); }, 80)
 		});
 	}
 
