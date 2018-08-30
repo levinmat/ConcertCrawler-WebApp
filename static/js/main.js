@@ -204,8 +204,10 @@ $(document).ready(function() {
 
 	// On mobile, select all text in search field when clicked
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$(document).on('click', 'input[type=search]', function () {
-			this.select(); 
+		console.log("mobile");
+		$("#searchField").on('click', function () {
+			console.log("select");
+			setTimeout(function() { $("#searchField").select(); }, 40)
 		});
 	}
 
