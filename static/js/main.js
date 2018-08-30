@@ -174,6 +174,15 @@ function scrollToYear(year) {
 
 
 
+function selectText() {
+// On mobile, select all text in search field when clicked
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		$("#searchField").focus();
+		$("#searchField").select();
+	}
+}
+
+
 
 $(document).ready(function() {
 
@@ -202,10 +211,7 @@ $(document).ready(function() {
 	});
 
 
-	// On mobile, select all text in search field when clicked
-	if(! /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$("#searchField").attr('onfocus', '');
-	}
+	
 
 
 	// Make sure server is currently connected to Spotify API (token expires and needs refresh sometimes)
