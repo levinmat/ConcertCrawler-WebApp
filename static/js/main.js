@@ -74,7 +74,7 @@ function renderResponse(res) {
 			}
 		}
 		// Add help icon to info message
-		msg += ` <a href="#" onclick=showHelp()><i class="fas fa-question-circle"></i></a>`
+		msg += ` <a href="javascript:void(0);" onclick=showHelp()><i class="fas fa-question-circle"></i></a>`
 
 		if ($("#search").parent().attr('id') === "header" ) {
 			main.html("<div id='info'>" + msg + "<div>");

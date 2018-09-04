@@ -11,9 +11,9 @@ from live_albums import *
 
 app = Flask(__name__, static_url_path="/static")
 
-# Cache 200 queries, remove entry after 24 hours
-queryCache = SimpleCache(threshold=200, default_timeout=86400)    # Query --> Artist ID
-responseCache = SimpleCache(threshold=200, default_timeout=86400) # Artist ID --> Response JSON
+# Cache 200 queries, remove entry after 72 hours
+queryCache = SimpleCache(threshold=200, default_timeout=259200)    # Query --> Artist ID
+responseCache = SimpleCache(threshold=200, default_timeout=259200) # Artist ID --> Response JSON
 
 
 # Boolean for whether app successfully connected with Spotify API
