@@ -99,16 +99,15 @@ function renderResponse(res) {
 	const yearsWithAlbums = res.albums_by_year;
 
 	// For each year that has live albums
-	for (var i in yearsWithAlbums) {
+	for (let year of yearsWithAlbums) {
 		// New div for the year with the header and add an entry in the sidebar
 		main.append("<div class='yearContainer'>");
-		main.append(Mustache.render(yearTemplate, yearsWithAlbums[i]));
-		menu.append(Mustache.render(sidebarTemplate, yearsWithAlbums[i]));
+		main.append(renderYearHeader(year));
+		menu.append(renderSidebarEntry(year));
 
 		// Add entry for each album in this year
-		const albums = yearsWithAlbums[i].albums;
-		for (var j in albums) {
-			main.append(Mustache.render(albumTemplate, albums[j]));
+		for (let album of year.albums) {
+			main.append(renderAlbum(album));
 		}
 
 		main.append("</div>");
@@ -121,23 +120,28 @@ function renderResponse(res) {
 
 
 
-// Templates (rendered using mustache.js)
-const sidebarTemplate = `<a href='#{{year}}' onclick=scrollToYear({{year}})>{{year}} ({{count}})</a><br>`;
-const yearTemplate = `<span class='year' id='{{year}}'><strong>{{year}}</strong> &mdash; {{count}} album(s)</span>`;
-const albumTemplate = `
-<a target='_blank' href={{url}}>
+// Render eaach component
+function renderSidebarEntry(year) { // Menu bar links to jump to year
+	return `<a href='#${year.year}' onclick=scrollToYear(${year.year})>${year.year} (${year.count})</a><br>`;
+}
+function renderYearHeader(year) { // Year section header
+	return `<span class='year' id='${year.year}'><strong>${year.year}</strong> &mdash; ${year.count} album(s)</span>`;
+}
+function renderAlbum(album) { // Album 
+	return `<a target='_blank' href=${album.url}>
 <div class='album'>
 
 <div class='albumImage'>
-<img src={{img_url}} alt="{{name}} image>"</img>
+<img src=${album.img_url} alt="${album.name} image>"</img>
 </div>
 
 <div class='albumName'>
-{{name}}
+${album.name}
 </div>
 
 </div>
 </a>`;
+}
 
 
 // Switch between the two main views
